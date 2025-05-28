@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body data-theme="dark">
+    <div id="themeToggle">light mode</div>
+
+    <div class="container">
+        <div id="clock">-- : -- : --</div>
+
+        <div class="right-panel">
+            <div class="list">
+                <div id="timerBtn">
+                    <button onclick="toggleTimer()">Timer
+                        <img src="images/dark/timer.png" alt="Timer Icon" />
+                    </button>
+                </div>
+                <div id="stopwatchBtn">
+                    <button onclick="toggleStopWatch()">Stopwatch
+                        <img src="images/dark/stopwatch play.png" alt="Stopwatch Icon" />
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="invisible_container">
+        <div id="timerDiv">
+            <button id="reset_timer">reset</button>
+            <button id="start_timer">start</button>
+            <button id="pause_timer">pause</button>
+        </div>
+        <div id="stopWatchDiv">
+            <button id="reset_stopwatch">reset</button>
+            <button id="start_stopwatch">start</button>
+            <button id="stop_stopwatch">stop</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+/* Reset + Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #1e1e2f;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+body.light-mode {
+    background-color: #f4f4f4;
+    color: #121212;
+}
+
+body.light-mode #themeToggle {
+    background-color: #ddd;
+    color: #121212;
+}
+
+/* Theme toggle button */
+#themeToggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: #444;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+#themeToggle:hover {
+    background-color: #666;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    justify-content: center;
+}
+
+/* Clock */
+#clock {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 13ch;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* Right Panel */
+.right-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+/* Buttons */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.list button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #282c34;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 180px;
+    justify-content: center;
+}
+
+body.light-mode .list button {
+    background-color: #ccc;
+    color: #121212;
+}
+
+.list button:hover {
+    background-color: #3c3f4a;
+}
+
+.list img {
+    height: 24px;
+    width: 24px;
+}
+
+/* Timer/Stopwatch */
+#invisible_container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    width: 220px;
+}
+
+#timerDiv,
+#stopWatchDiv {
+    display: none;
+    background-color: #333;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    min-width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#timerDiv.active,
+#stopWatchDiv.active {
+    display: block;
+}
+
+:root {
+    --bg-color-dark: #1e1e2f;
+    --text-color-dark: #ffffff;
+    --bg-color-light: #f4f4f4;
+    --text-color-light: #121212;
+    --button-bg-dark: #282c34;
+    --button-bg-light: #ccc;
+    --panel-bg-dark: #333;
+    --panel-bg-light: #fff;
+}
+
+body[data-theme="dark"] {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+body[data-theme="light"] {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+}
+
+/* Theme Toggle Button */
+#themeToggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: #444;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+}
+
+body[data-theme="light"] #themeToggle {
+    background-color: #ddd;
+    color: #121212;
+}
+
+.container, .right-panel, .list {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Button Styling */
+.list button {
+    background-color: var(--button-bg-dark);
+    color: white;
+}
+
+body[data-theme="light"] .list button {
+    background-color: var(--button-bg-light);
+    color: var(--text-color-light);
+}
+
+#timerDiv,
+#stopWatchDiv {
+    background-color: var(--panel-bg-dark);
+    color: white;
+}
+
+body[data-theme="light"] #timerDiv,
+body[data-theme="light"] #stopWatchDiv {
+    background-color: var(--panel-bg-light);
+    color: var(--text-color-light);
+}
